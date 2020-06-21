@@ -212,7 +212,7 @@ end
  right_num = length(find((Test_lables'-Train_lables(index(1,:))')==0)); 
  accuracy = right_num/test_num;
  accuracy_matrix(iteration) = accuracy * 100;
- fprintf(1,'the number of right predicted samples of the %d-th combination is：%d %d\n',iteration,right_num );
+ fprintf(1,'the number of right predicted samples of the %d-th combination is: %d %d\n',iteration,right_num );
  fprintf(1,'the classification score of the %d-th combination is: %d %d\n', iteration ,accuracy*100);
 
 end
