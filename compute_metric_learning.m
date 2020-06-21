@@ -1,14 +1,14 @@
 function [ U ] = compute_metric_learning( k_Gras, k_Spd, lamda1, lamda2, Train_lables)
   num_class = length(unique(Train_lables)); % 
-  D = size(k_Gras,1); % 141
+  D = size(k_Gras,1); % 
   d = 8; % the target dimensionality of the generated subspace
   itera = 1;
   % U = rand(D,d);
 for i=1:itera
   fprintf('\n i= %d \n',i);
   
-  Sw=zeros(D,D); % 141 * 141
-  Sb=zeros(D,D); % 141 * 141
+  Sw=zeros(D,D); %
+  Sb=zeros(D,D); %
   Nw=0;
   Nb=0;
   for j = 1 : num_class
