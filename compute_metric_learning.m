@@ -9,6 +9,8 @@ for i=1:itera
   
   Sw=zeros(D,D); %
   Sb=zeros(D,D); %
+  
+  % compute the within-class scatter matrix
   Nw=0;
   Nb=0;
   for j = 1 : num_class
@@ -28,6 +30,7 @@ for i=1:itera
       end
   end
   
+  % compute the between-class scatter matrix
   for j=1:num_class
       num_eachclass=find(Train_lables==j);
       num_difclass=find(Train_lables~=j);
