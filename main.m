@@ -89,6 +89,7 @@ end
     t_train1= cputime - t_star_train1; %
     % clear cputime;
     t_star_test1=cputime; % 计时用;
+    
     %step6:
     tic
     [ls_test, q2] = compute_sub(ImgData_HE_test); 
@@ -117,13 +118,13 @@ end
     tic
 for i=1:size(log_cov_train_Gras,2)
     for j=1:size(log_cov_train_Gras,2)
-        cov_i_Train=log_cov_train_Gras{i};% cov_i_Train is actually the log-mapped cov
-        cov_j_Train=log_cov_train_Gras{j};% cov_i_Train is actually the log-mapped cov
+        cov_i_Train=log_cov_train_Gras{i}; % 
+        cov_j_Train=log_cov_train_Gras{j}; % 
         temp_i = cov_i_Train * cov_i_Train';
         temp_j = cov_j_Train*cov_j_Train';
         temp_i = temp_i(:);
         temp_j = temp_j(:);
-        kmatrix_train(i,j) = temp_i' * temp_j; % trace((cov_i_Train*cov_i_Train')*(cov_j_Train*cov_j_Train'));%141*141
+        kmatrix_train(i,j) = temp_i' * temp_j; % trace((cov_i_Train*cov_i_Train')*(cov_j_Train*cov_j_Train'));
         kmatrix_train(j,i)=kmatrix_train(i,j);
     end
 end
@@ -134,11 +135,11 @@ disp('train kernel Grass')
 tic
 for i=1:size(log_cov_train_Spd,2)
     for j=1:size(log_cov_train_Spd,2)
-        cov_i_Train=log_cov_train_Spd{i}; % cov_i_Train is actually the log-mapped cov
-        cov_j_Train=log_cov_train_Spd{j}; % cov_i_Train is actually the log-mapped cov
+        cov_i_Train=log_cov_train_Spd{i}; 
+        cov_j_Train=log_cov_train_Spd{j}; 
         cov_i_Train_reshape=reshape(cov_i_Train,size(cov_i_Train,1)*size(cov_i_Train,2),1);
         cov_j_Train_reshape=reshape(cov_j_Train,size(cov_j_Train,1)*size(cov_j_Train,2),1);
-        kmatrix_train_Spd(i,j)=cov_i_Train_reshape'*cov_j_Train_reshape;%141*141
+        kmatrix_train_Spd(i,j)=cov_i_Train_reshape'*cov_j_Train_reshape; 
         kmatrix_train_Spd(j,i)=kmatrix_train_Spd(i,j);
     end
 end
@@ -167,11 +168,11 @@ disp('test kernel Grass')
 tic
 for i=1:size(log_cov_train_Spd,2)
     for j=1:size(log_cov_test_Spd,2)
-        cov_i_Train=log_cov_train_Spd{i};% cov_i_Train is actually the log-mapped cov
-        cov_j_Test=log_cov_test_Spd{j};% cov_i_Train is actually the log-mapped cov
-        cov_i_Train_reshape=reshape(cov_i_Train,size(cov_i_Train,1)*size(cov_i_Train,2),1);%拉成一个高纬的列向量
-        cov_j_Test_reshape=reshape(cov_j_Test,size(cov_j_Test,1)*size(cov_j_Test,2),1);%拉成一个高纬的列向量
-        kmatrix_test_Spd(i,j)=cov_i_Train_reshape'*cov_j_Test_reshape;%240*141
+        cov_i_Train=log_cov_train_Spd{i};
+        cov_j_Test=log_cov_test_Spd{j};
+        cov_i_Train_reshape=reshape(cov_i_Train,size(cov_i_Train,1)*size(cov_i_Train,2),1);
+        cov_j_Test_reshape=reshape(cov_j_Test,size(cov_j_Test,1)*size(cov_j_Test,2),1);
+        kmatrix_test_Spd(i,j)=cov_i_Train_reshape'*cov_j_Test_reshape;
     end
 end
 toc
