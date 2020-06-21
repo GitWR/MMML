@@ -12,11 +12,11 @@ In this folder:
   
 If you find this code is useful for your own work, please kindly cite the following:
 
-@INPROCEEDINGS{8546030,
-  author={Rui Wang, Xiao-Jun Wu, Kai-Xuan Chen, Josef Kittler},
-  booktitle={2018 24th International Conference on Pattern Recognition (ICPR)}, 
-  title={Multiple Manifolds Metric Learning with Application to Image Set Classification}, 
-  year={2018},
-  pages={627-632},}
+    @INPROCEEDINGS{8546030,
+      author={Rui Wang, Xiao-Jun Wu, Kai-Xuan Chen, Josef Kittler},
+      booktitle={2018 24th International Conference on Pattern Recognition (ICPR)}, 
+      title={Multiple Manifolds Metric Learning with Application to Image Set Classification}, 
+      year={2018},
+      pages={627-632},}
 
 If you have any queries about this code, please do not hesitate to contact me at: cs_wr@jiangnan.edu.cn 
