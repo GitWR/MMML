@@ -6,7 +6,7 @@ clear data;
 K = max(K,K');
 
 % ====== Initialization
-nSmp = size(K,1);%得到的结果是150
+nSmp = size(K,1);
 if length(gnd) ~= nSmp
     error('gnd and data mismatch!');
 end
@@ -24,7 +24,7 @@ K = max(K,K');
 clear H;
 
 %======================================
-% SVD奇异值分解
+% SVD
 %======================================
 
 Hb = zeros(nClass,nSmp);
