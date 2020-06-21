@@ -58,7 +58,8 @@ for i=1:itera
   %         end
   %     end
   % end
-  % 优化
+  
+  % optimization
   [Object_V , Object_E] = eig(inv(Sw_final)*Sb_final); 
   E_unsort = diag(Object_E);
   [~ , index] = sort(E_unsort,'descend'); 
